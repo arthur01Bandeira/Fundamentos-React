@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
+import { Product } from "./components/Product";
 
 export  function Home() {
+    function handleAddProduct(){
+
+    }
+
+    function handleProductRemove(name: String){
+        console.log(`Você cliclou no botão de remover ${name}` )
+    }
     
     
     return (
@@ -19,13 +27,16 @@ export  function Home() {
             ></TextInput>
 
             <TouchableOpacity   
-                style={style.button}>
+                style={style.button} 
+                onPress={handleAddProduct}>
                 <Text style={style.textButton}>+</Text>
             </TouchableOpacity>
             </View>
+        
             <Text style={style.listTitle}>Compras Pendentes</Text>
             <View style={style.list}>
-                <Text style={style.listEmptyText}>Comprou todos os produtos? Adicione produtos a sua lista de compras</Text>
+                {/* <Text style={style.listEmptyText}>Comprou todos os produtos? Adicione produtos a sua lista de compras</Text> */}
+                <Product name="iPhone" onRemove={() => handleProductRemove("iPhone")}> </Product>
             </View>
         </View>
 
@@ -86,7 +97,7 @@ const style = StyleSheet.create({
         backgroundColor: "#31C667",
         borderRadius: 5,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
 
     },
 
