@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         backgroundColor: "white",
         borderBottomLeftRadius: 5,
-        borderTopLeftRadius: 5, 
+        borderTopLeftRadius: 5,
+        marginBottom: 8, 
     },
     button: {
         width: 56,
